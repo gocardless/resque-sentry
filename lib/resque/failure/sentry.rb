@@ -17,8 +17,7 @@ module Resque
     #
     class Sentry < Base
       def save
-        event = Raven::Event.capture_exception(exception)
-        Raven.send(event) if event
+        Raven.capture_exception(exception)
       end
 
       def self.count

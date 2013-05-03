@@ -7,7 +7,7 @@ Gem::Specification.new do |gem|
   gem.homepage = 'https://github.com/gocardless/resque-sentry'
 
   gem.add_dependency 'resque', '>= 1.18.0'
-  gem.add_dependency 'sentry-raven', '>= 0.1'
+  gem.add_dependency 'sentry-raven', '~> 0.4.6'
   gem.add_development_dependency 'rspec', '~> 2.6'
   gem.add_development_dependency 'mocha', '~> 0.11.0'
 

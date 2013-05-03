@@ -8,8 +8,7 @@ describe Resque::Failure::Sentry do
     payload = {'class' => Object, 'args' => 1}
 
     event = mock
-    Raven::Event.expects(:capture_exception).with(exception).returns(event)
-    Raven.expects(:send).with(event)
+    Raven.expects(:capture_exception).with(exception)
 
     backend = Resque::Failure::Sentry.new(exception, worker, queue, payload)
     backend.save
