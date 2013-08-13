@@ -17,14 +17,12 @@ module Resque
     #
     class Sentry < Base
 
-      @@logger = nil
-
       def self.logger
-        @@logger
+        @logger
       end
 
       def self.logger=(value)
-        @@logger = value
+        @logger = value
       end
 
       def save
