@@ -16,8 +16,19 @@ module Resque
     #   Resque::Failure.backend = Resque::Failure::Multiple
     #
     class Sentry < Base
+
+      def self.logger
+        @logger
+      end
+
+      def self.logger=(value)
+        @logger = value
+      end
+
       def save
-        Raven.capture_exception(exception)
+        options = {}
+        options[:logger] = self.class.logger if self.class.logger
+        Raven.capture_exception(exception, options)
       end
 
       def self.count
