@@ -31,7 +31,7 @@ module Resque
         Raven.capture_exception(exception, options)
       end
 
-      def self.count
+      def self.count(queue = nil, class_name = nil)
         # We can't get the total # of errors from Sentry so we fake it by
         # asking Resque how many errors it has seen.
         Stat[:failed]
@@ -39,4 +39,3 @@ module Resque
     end
   end
 end
-
