@@ -28,6 +28,10 @@ module Resque
       def save
         options = {}
         options[:logger] = self.class.logger if self.class.logger
+        options[:extra] = {
+          "Object" => payload['class'],
+          "Arguments" => payload['args']
+        }
         Raven.capture_exception(exception, options)
       end
 
