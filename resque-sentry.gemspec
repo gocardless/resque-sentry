@@ -1,6 +1,6 @@
 Gem::Specification.new do |gem|
   gem.name = 'resque-sentry'
-  gem.version = '1.1.1'
+  gem.version = '1.2.0'
   gem.authors = ['Harry Marr']
   gem.email = ['harry@gocardless.com']
   gem.summary = 'A failure backend for Resque that sends events to Sentry'
