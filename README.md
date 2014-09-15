@@ -13,6 +13,8 @@ $ gem install resque-sentry
 Add the following to an initializer:
 
 ```ruby
+require 'resque/failure/multiple'
+require 'resque/failure/redis'
 require 'resque-sentry'
 
 # [optional] custom logger value to use when sending to Sentry (default is 'root')
