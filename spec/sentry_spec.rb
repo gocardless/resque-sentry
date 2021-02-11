@@ -6,7 +6,8 @@ describe Resque::Failure::Sentry do
       :extra => {
         "Object" => Object,
         "Arguments" => [ 1, "foo" ]
-      }
+      },
+      :hint => { :background => false }
     }
     exception = StandardError.new("Test Error")
     worker = Resque::Worker.new(:test)
@@ -27,7 +28,8 @@ describe Resque::Failure::Sentry do
       :extra => {
         "Object" => Object,
         "Arguments" => [ 1, "foo" ]
-      }
+      },
+      :hint => { :background => false }
     }
     exception = StandardError.new("Test Error")
     worker = Resque::Worker.new(:test)
